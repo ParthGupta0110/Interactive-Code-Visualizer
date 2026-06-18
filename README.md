@@ -1,79 +1,302 @@
-ractive Code Visualizer
+# 🚀 Interactive Code Visualizer
 
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![ReactFlow](https://img.shields.io/badge/ReactFlow-FF007A?style=for-the-badge&logo=reactflow&logoColor=white)](https://reactflow.dev/)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+An interactive developer tool that transforms source code into visual execution-flow diagrams, helping programmers understand program logic through graphical representations of variables, functions, loops, conditions, and return statements.
 
-An interactive web application designed to help developers and students map and visualize program logic dynamically. By using a nodal canvas, this tool bridges the gap between abstract execution paths and visual conceptualization.
+Built for students, developers, and educators, the platform bridges the gap between source code and visual reasoning by converting code structures into intuitive node-based flow diagrams.
 
 ---
 
-## ✨ Features (Current Status)
+## 🌟 Key Features
 
-* **Interactive Nodal Canvas:** Built using `ReactFlow` supporting smooth fluid panning, zooming, and dynamic node mapping.
-* **Modern Dark UI:** Tailored layout with a customized `#121212` background and clean grid structures to minimize tracking load.
-* **Decoupled Architecture:** Clean structural separation between the UI layout rendering layer (`frontend`) and operational logic scripts (`backend`).
+### 📦 Variable Tracking
+Automatically detects variable declarations and visualizes them as interactive nodes.
+
+### 🚀 Function Visualization
+Identifies function definitions and displays their relationships within the program flow.
+
+### 🤔 Conditional Branch Mapping
+Visualizes `if`, `else if`, and `else` conditions using connected decision nodes.
+
+### 🔄 Loop Representation
+Supports visualization of iterative structures such as:
+- `for` loops
+- `while` loops
+- Nested loops
+
+### ↩️ Return Statement Detection
+Maps return statements to help users understand function outputs and execution paths.
+
+### 🎯 Interactive Node-Based Canvas
+Built using React Flow, allowing:
+- Zooming
+- Panning
+- Dynamic node interaction
+- Relationship visualization
+
+### 🌙 Modern Developer Interface
+- Dark theme UI
+- Responsive layout
+- Smooth graph navigation
+- Grid-based visualization workspace
 
 ---
 
-## 🛠️ Tech Stack
+# 📸 Screenshots
 
-* **Frontend:** React.js (JSX), ReactFlow, CSS3
-* **Backend Runtime:** Node.js, Express.js
-* **Version Control:** Git & GitHub
+## Variable Mapping
+for code: 
+max_val = 100
+multiplier = 2
+final_score = max_val * multiplier
+<img width="1907" height="871" alt="image" src="https://github.com/user-attachments/assets/5607cf71-2313-4842-a73c-8e37eadd6ddb" />
 
----
+## Conditional Flow Analysis
+for code:
+if (b > max_val) {
+    max_val = b;
+} else {
+    max_val = c;
+}
+<img width="1907" height="866" alt="image" src="https://github.com/user-attachments/assets/81130f55-e28f-41ac-bef8-4146a5d52801" />
 
-## 📂 Project Structure
+
+## Loop Visualization
+for code:
+while (current <= n) {
+    result = result * current;
+    current = current + 1;
+}
+<img width="1906" height="867" alt="image" src="https://github.com/user-attachments/assets/456ad2b3-927e-4faa-a444-6c540e4de168" />
+
+
+# 🏗️ Architecture
 
 ```text
-├── backend/               # Server-side logic and execution modules
-└── frontend/              # Client-side React interface
-    ├── public/            # Static configuration assets
-    └── src/               # Application source environment
-        ├── App.jsx        # Root canvas orchestrator managing states
-        ├── index.css      # Core visualization layout rules
-        └── index.js       # App entry bootstrap
-⚙️ Quick Start Installation
-Prerequisites
-Make sure you have Node.js and npm set up on your machine.
+                    User Input
+                         │
+                         ▼
+                Code Analysis Engine
+                         │
+                         ▼
+              Structure Identification
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+        ▼                ▼                ▼
+    Variables       Functions        Conditions
+        │                │                │
+        └────────────────┼────────────────┘
+                         │
+                         ▼
+                 React Flow Renderer
+                         │
+                         ▼
+                Interactive Diagram
+```
 
-1. Environment Setup
-Navigate to your project root folder:
+---
 
-Bash
+# 🛠️ Tech Stack
+
+## Frontend
+
+- React.js
+- React Flow
+- CSS3
+- JavaScript (ES6+)
+
+## Backend
+
+- Node.js
+- Express.js
+
+## Development Tools
+
+- Git
+- GitHub
+- VS Code
+
+---
+
+# 📂 Project Structure
+
+```text
+Interactive-Code-Visualizer/
+│
+├── backend/
+│   ├── routes/
+│   ├── controllers/
+│   ├── parsers/
+│   └── server.js
+│
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── App.jsx
+│       ├── index.js
+│       └── index.css
+│
+├── screenshots/
+│
+├── README.md
+│
+└── package.json
+```
+
+---
+
+# ⚙️ Installation
+
+## Prerequisites
+
+Make sure the following are installed:
+
+- Node.js (v18+ recommended)
+- npm
+
+---
+
+## Clone Repository
+
+```bash
+git clone https://github.com/ParthGupta0110/Interactive-Code-Visualizer.git
+
 cd Interactive-Code-Visualizer
-2. Run Client Module (Frontend)
-Bash
+```
+
+---
+
+## Start Frontend
+
+```bash
 cd frontend
+
 npm install
+
 npm start
-The interface will automatically trigger on http://localhost:3000.
+```
 
-3. Run Service Module (Backend)
-Open a parallel terminal window and run:
+Frontend will run on:
 
-Bash
+```text
+http://localhost:3000
+```
+
+---
+
+## Start Backend
+
+Open a second terminal:
+
+```bash
 cd backend
+
 npm install
+
 npm start
-🔮 Future Roadmap (Under Active Development)
-We are actively expanding this visualizer into a full-scale developer automation tool:
+```
 
-📝 Monaco Editor Integration: Embedding a high-fidelity code editor interface for real-time script typing.
+Backend server will start on the configured port.
 
-🔍 AST Parser Implementation: Introducing Babel/Tree-sitter engines to map Abstract Syntax Trees dynamically for JavaScript and Python.
+---
 
-📈 Complexity Analyzers: Building integrated computation panels to track automated Time and Space complexity metrics.
+# 🧠 How It Works
 
-🤖 AI Explanations: Layering LLM capabilities for granular, line-by-line runtime debugging summaries.
+1. User enters source code.
+2. Code is analyzed and parsed.
+3. Important program structures are identified:
+   - Variables
+   - Functions
+   - Loops
+   - Conditions
+   - Return statements
+4. Nodes are generated dynamically.
+5. Relationships between nodes are created.
+6. React Flow renders the execution graph.
 
-📜 License
-Distributed under the official open-source MIT License.
+---
 
-👨‍💻 Author
-Parth Gupta
+# 🔮 Future Enhancements
 
-🚀 GitHub Profile
+### 📝 Monaco Editor Integration
+VS Code-like code editing experience.
 
-💼 LinkedIn Network
+### 🌳 AST-Based Parsing
+Support for:
+- JavaScript
+- Python
+- Java
+- C++
+
+using Babel and Tree-sitter.
+
+### 📊 Complexity Analyzer
+
+Automatic detection of:
+
+- Time Complexity
+- Space Complexity
+
+Example:
+
+```text
+Time Complexity : O(n)
+
+Space Complexity : O(1)
+```
+
+### 🤖 AI Code Explanation
+
+Generate:
+- Line-by-line explanations
+- Logic summaries
+- Learning notes
+
+### 🔄 Execution Simulation
+
+Step-by-step code execution visualization.
+
+### 🌐 Multi-Language Support
+
+Planned support for:
+
+- JavaScript
+- Python
+- Java
+- C++
+- C
+
+---
+
+# 🎯 Use Cases
+
+- Learning Programming
+- Understanding DSA Logic
+- Teaching Algorithms
+- Debugging Small Programs
+- Visualizing Execution Flow
+- Interview Preparation
+
+---
+
+# 📈 Resume Highlights
+
+- Developed a code analysis and visualization platform using React.js and Node.js.
+- Implemented detection and graphical mapping of variables, functions, loops, and conditional branches.
+- Designed an interactive execution-flow visualization system using React Flow.
+- Built a scalable architecture for future AST parsing and complexity analysis.
+
+---
+
+# 👨‍💻 Author
+
+### Parth Gupta
+
+- GitHub: https://github.com/ParthGupta0110
+- LinkedIn: https://www.linkedin.com/in/parth-gupta-584197294/
+
+---
+
+## ⭐ If you found this project useful, consider giving it a star!
