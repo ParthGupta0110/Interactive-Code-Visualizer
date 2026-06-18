@@ -68,6 +68,7 @@ while (current <= n) {
 }
 <img width="1906" height="867" alt="image" src="https://github.com/user-attachments/assets/456ad2b3-927e-4faa-a444-6c540e4de168" />
 
+---
 
 # 🏗️ Architecture
 
